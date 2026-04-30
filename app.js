@@ -211,6 +211,8 @@ const state = {
   cart: []
 };
 
+const floatingCart = document.getElementById("floatingCart");
+const cartBadge = document.getElementById("cartBadge");
 const productGrid = document.getElementById("productGrid");
 const categoryFilters = document.getElementById("categoryFilters");
 const cartItems = document.getElementById("cartItems");
@@ -261,6 +263,10 @@ function renderProducts() {
 }
 
 function renderCart() {
+  const totalQty = state.cart.reduce((sum, item) => sum + item.qty, 0);
+  cartBadge.textContent = totalQty;
+  cartBadge.style.display = totalQty > 0 ? "flex" : "none";
+
   if (!state.cart.length) {
     cartItems.innerHTML = "<p>Cart is empty.</p>";
     cartTotal.textContent = money(0);
@@ -284,6 +290,10 @@ function addToCart(id) {
   else state.cart.push({ id: product.id, title: product.title, price: product.price, qty: 1, image: product.image });
   renderCart();
   window.scrollTo({ top: 0, behavior: "smooth" });
+  
+  floatingCart.classList.remove("cart-bump");
+  void floatingCart.offsetWidth;
+  floatingCart.classList.add("cart-bump");
 }
 
 function openQuickView(id) {
@@ -357,6 +367,10 @@ function bindEvents() {
 
   document.getElementById("closeModal").addEventListener("click", closeModal);
   document.querySelector(".modal-backdrop").addEventListener("click", closeModal);
+
+  floatingCart.addEventListener("click", () => {
+    document.querySelector(".checkout").scrollIntoView({ behavior: "smooth" });
+  });
 
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
