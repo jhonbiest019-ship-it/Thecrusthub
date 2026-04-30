@@ -15,6 +15,7 @@ body {
   font-family: Inter, sans-serif;
   color: var(--text);
   background: var(--bg);
+  min-width: 1200px;
 }
 
 .page-bg {
@@ -275,18 +276,4 @@ textarea { resize: vertical; }
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-@media (max-width: 1200px) {
-  .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-
-@media (max-width: 992px) {
-  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-@media (max-width: 768px) {
-  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 520px) {
-  .product-grid { grid-template-columns: 1fr; }
-}
+/* Layout fixed to 5 columns for all screens as requested */
