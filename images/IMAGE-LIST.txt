@@ -1,0 +1,19 @@
+Place exactly one verified image for each product with these filenames:
+
+1) chocolate-fudge-cake.jpg
+2) red-velvet-cake.jpg
+3) pineapple-cream-cake.jpg
+4) coffee-walnut-cake.jpg
+5) butter-almond-cookies.jpg
+6) zeera-biscuit.jpg
+7) nankhatai.jpg
+8) coconut-macaroons.jpg
+9) elaichi-rusk.jpg
+10) milk-rusk.jpg
+11) chicken-patties.jpg
+12) aloo-patties.jpg
+13) mini-pizza-buns.jpg
+14) shahi-kheer.jpg
+15) gajar-halwa.jpg
+
+Recommended image size: 1200x900 (or any 4:3 image).
